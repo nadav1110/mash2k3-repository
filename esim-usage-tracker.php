@@ -263,8 +263,8 @@ function esim_usage_tracker_shortcode() {
                 // Format data for display
                 function formatData(value, isTotal = false) {
                     if (isTotal) {
-                        // Total data is always displayed as an integer in GB
-                        return Math.floor(value / 1000) + ' GB';
+                        // Total data is displayed with one decimal place in GB
+                        return (value / 1000).toFixed(1) + ' GB';
                     }
                     // Remaining or used data
                     if (value >= 1000) {
